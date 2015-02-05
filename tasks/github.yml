@@ -1,0 +1,9 @@
+---
+
+- name: copy gitconfig
+  copy:
+   src: files/misc/gitconfig
+   dest: /etc/gitconfig
+   owner: root
+   group: root
+   mode: 0644
