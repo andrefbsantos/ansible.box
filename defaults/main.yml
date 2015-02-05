@@ -2,6 +2,8 @@
 
 box_container: true
 
+box_github_https: true
+
 box_essential:
   - build-essential
   - git
