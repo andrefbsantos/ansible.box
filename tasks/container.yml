@@ -1,0 +1,20 @@
+---
+
+- shell: echo {{ item }} hold | dpkg --set-selections
+  with_items:
+    - udev
+    - initscripts
+    - upstart
+
+- command: dpkg-divert --local --rename --add {{ item }}
+  with_items: box_container_replace
+
+- file:
+    src: "/bin/true"
+    dest: "{{ item }}"
+    owner: root
+    group: root
+    force: yes
+    state: link
+  with_items: box_container_replace
+
