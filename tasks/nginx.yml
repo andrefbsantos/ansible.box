@@ -40,7 +40,7 @@
     owner: root
     group: root
     mode: 0644
-  when: "passenger" in box_packages
+  when: "'passenger' in box_packages"
 
 
 - { include: runit.yml, runit_scripts: [ "nginx", "nginx-log-forwarder" ], when: box_container }
