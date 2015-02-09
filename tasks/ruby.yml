@@ -10,7 +10,7 @@
 
 - name: set gemrc
   copy:
-   src: files/misc/gemrc
+   src: misc/gemrc
    dest: /etc/gemrc
    owner: root
    group: root

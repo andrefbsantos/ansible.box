@@ -2,7 +2,7 @@
 
 - name: copy locales
   copy:
-   src: files/misc/locales
+   src: misc/locales
    dest: /etc/default/locales
    owner: root
    group: root

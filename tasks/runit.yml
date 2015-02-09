@@ -31,7 +31,7 @@
 
 - name: "runit script for {{ item }}"
   copy:
-   src: "files/runit/{{ item }}"
+   src: "runit/{{ item }}"
    dest: "/etc/service/{{ item }}/run"
    owner: root
    group: root
