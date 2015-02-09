@@ -7,7 +7,15 @@
    update_cache: yes
    cache_valid_time: 3600
   with_items:
-   - redis-server 
+   - redis-server
    - libhiredis-dev
+
+- name: Redis configuration
+  template:
+    src: redis.conf.j2
+    dest: /etc/redis/redis.conf
+    owner: root
+    group: root
+    mode: 0644
 
 - { include: runit.yml, runit_scripts: [ "redis" ], when: box_container }

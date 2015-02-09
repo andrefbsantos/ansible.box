@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name localhost;
+    root {{ box_nginx_home }}/public;
+{% if "passenger" in box_packages %}
+    passenger_enabled on;
+    passenger_user rails;
+    passenger_friendly_error_pages on;
+    passenger_app_env {{ box_rails_env }};
+{% endif %}
+}

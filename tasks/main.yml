@@ -23,3 +23,5 @@
   - include: nginx.yml
     when: "'nginx' in box_packages"
 
+  - include: container.yml
+    when: box_container

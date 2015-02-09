@@ -8,6 +8,10 @@ box_essential:
   - build-essential
   - git
 
+box_rails_env: development
+
+box_nginx_home: /var/www/microservice
+
 box_packages: [ ]
 
 box_packages:
