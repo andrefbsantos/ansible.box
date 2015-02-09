@@ -25,9 +25,9 @@
     group: root
     mode: 0644
 
-- name: Nginx enviroment configuration
+- name: Nginx environment configuration
   copy:
-    src: nginx/enviroment.conf
+    src: nginx/environment.conf
     dest: /etc/nginx/main.d/environment.conf
     owner: root
     group: root
