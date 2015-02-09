@@ -9,6 +9,17 @@
   with_items:
    - "{% if 'passenger' in box_packages %}nginx-extras{% else %}nginx{% endif %}"
 
+- name: Nginx directories
+  file:
+    path: "{{ item }}"
+    owner: root
+    group: root
+    state: directory
+  with_items:
+    - /etc/nginx/main.d
+    - /etc/nginx/conf.d
+    - /etc/nginx/sites-enabled
+
 - name: Nginx configuration
   template:
     src: nginx/nginx.conf.j2
