@@ -8,7 +8,7 @@ box_essential:
   - build-essential
   - git
 
-#box_packages: []
+box_packages: [ ]
 
 box_packages:
 #     - ruby1.9.3
