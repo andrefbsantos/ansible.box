@@ -6,6 +6,13 @@
    id: 561F9B9CAC40B2F7   
    state: present
 
+- name: Install Passenger
+  apt:
+   pkg: apt-transport-https 
+   state: installed
+   update_cache: yes
+   cache_valid_time: 3600
+
 - name: Add Passenger deb repository
   apt_repository:
    repo: 'deb https://oss-binaries.phusionpassenger.com/apt/passenger {{ ansible_distribution_release }} main'
