@@ -18,3 +18,9 @@
     state: link
   with_items: box_container_replace
 
+- copy:
+    src: files/my_init
+    dest: /sbin/my_init
+    owner: root
+    group: root
+    mode: 755
