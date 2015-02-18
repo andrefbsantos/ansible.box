@@ -18,9 +18,17 @@
     state: link
   with_items: box_container_replace
 
+
+- file:
+    path: "/etc/container_environment"
+    owner: root
+    group: root
+    state: directory
+
 - copy:
     src: my_init
     dest: /sbin/my_init
     owner: root
     group: root
     mode: 755
+
