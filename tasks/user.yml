@@ -1,0 +1,18 @@
+---
+
+- name: create application group
+  group:
+    name: "{{ box_group }}"
+    gid: 1000
+    state: present
+
+- name: create application user
+  user:
+    name: "{{ box_user }}"
+    comment: "application user"
+    uid: 1000
+    group: "{{ box_group }}"
+    home: "{{ box_webpath }}"
+    shell: /sbin/nologin
+    state: present
+

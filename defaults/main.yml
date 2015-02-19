@@ -4,11 +4,15 @@ box_container: true
 
 box_github_https: true
 
+box_user: rails
+box_group: rails
+box_webpath: /var/www
+
 box_essential:
   - build-essential
   - git
 
-box_rails_env: development
+box_env: development
 
 box_nginx_home: /var/www/microservice
 
