@@ -1,6 +1,6 @@
 ---
 
-- name: Install Redis
+- name: Redis | Install
   apt:
    pkg: "{{ item }}"
    state: installed
@@ -10,12 +10,14 @@
    - redis-server
    - libhiredis-dev
 
-- name: Redis configuration
+- name: Redis | Copy configuration
   template:
-    src: redis.conf.j2
+    src: redis/redis.conf.j2
     dest: /etc/redis/redis.conf
     owner: root
     group: root
     mode: 0644
 
-- { include: runit.yml, runit_scripts: [ "redis" ], when: box_container }
+- include: runit.yml
+  runit_scripts: [ "redis" ]
+  when: box_container
