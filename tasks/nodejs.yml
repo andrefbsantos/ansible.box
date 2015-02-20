@@ -1,5 +1,12 @@
 ---
 
+- name: Node.js | Install apt-transport-https
+  apt:
+   pkg: apt-transport-https
+   state: installed
+   update_cache: yes
+   cache_valid_time: 3600
+
 - name: Node.js | Import the GPG key into apt
   apt_key:
    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
@@ -17,12 +24,6 @@
 
 - name: Node.js | Install
   apt:
-   pkg: apt-transport-https
-   state: installed
-   update_cache: yes
-   cache_valid_time: 3600
-
-- apt:
    pkg: "{{ item }}"
    state: installed
    update_cache: yes
