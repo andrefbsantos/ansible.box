@@ -6,6 +6,13 @@
     gid: 1000
     state: present
 
+- name: User | ensure dir exits
+  file:
+    path: "{{ box_webpath | dirname }}"
+    owner: root
+    group: root
+    state: directory  
+
 - name: User | create application user
   user:
     name: "{{ box_user }}"
