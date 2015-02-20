@@ -1,20 +1,20 @@
 ---
 
-- name: Install runit
+- name: Runit | Install
   apt:
    pkg: "runit"
    state: installed
    update_cache: yes
    cache_valid_time: 3600
 
-- name: runit directory
+- name: Runit | base directory
   file:
    path: /etc/service
    owner: root
    group: root
    state: directory
 
-- name: "runit {{ item }}"
+- name: "Runit | create service"
   file:
    path: "/etc/service/{{ item }}"
    owner: root
@@ -29,7 +29,7 @@
    state: touch
   with_items: runit_scripts
 
-- name: "runit script for {{ item }}"
+- name: "Runit | creating script"
   copy:
    src: "runit/{{ item }}"
    dest: "/etc/service/{{ item }}/run"
