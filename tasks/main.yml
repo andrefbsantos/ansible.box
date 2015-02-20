@@ -5,6 +5,8 @@
   - include: github.yml
     when: box_github_https
 
+  - include: user.yml
+
   - include: ruby.yml
     when: "{{ box_ruby_supported | intersect(box_packages)| length == 1 }}"
 
