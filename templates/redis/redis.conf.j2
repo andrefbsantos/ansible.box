@@ -1,4 +1,8 @@
-daemonize {% if box_container %}no{% else %}yes{% endif %}
+{% if box_container %}
+daemonize no 
+{% else %}
+daemonize yes
+{% endif %}
 pidfile /var/run/redis/redis-server.pid
 port 6379
 bind 127.0.0.1
