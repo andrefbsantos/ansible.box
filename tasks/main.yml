@@ -1,5 +1,7 @@
 ---
 
+  - include: update.yml
+
   - include: basic.yml
 
   - include: github.yml

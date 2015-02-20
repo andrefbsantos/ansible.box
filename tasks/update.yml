@@ -1,0 +1,9 @@
+---
+
+- name: upgrade all packages 
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: remove old packages
+  command: apt-get autoremove -y
