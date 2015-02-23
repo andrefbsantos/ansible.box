@@ -20,10 +20,13 @@
 
 
 - file:
-    path: "/etc/container_environment"
+    path: "{{ item }}"
     owner: root
     group: root
     state: directory
+  with_items:
+    - "/etc/my_init.d"
+    - "/etc/container_environment"
 
 - copy:
     src: my_init
