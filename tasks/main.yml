@@ -1,6 +1,7 @@
 ---
 
   - include: update.yml
+    when: box_upgrade
 
   - include: basic.yml
 

@@ -2,6 +2,8 @@
 
 box_container: true
 
+box_upgrade: true
+
 box_github_https: true
 
 box_user: rails
