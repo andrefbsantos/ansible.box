@@ -26,3 +26,14 @@
    install_recommends: yes
   with_items:
    - passenger
+
+- name: Passenger | Fix passenger utils shebang
+  lineinfile:
+    dest: "{{ item }}"
+    regexp: '^#\!/usr/bin/ruby\s*'
+    line: "#!/usr/bin/env ruby"
+    backrefs: yes
+    state: present
+  with_items:
+    - "/usr/sbin/passenger-memory-stats"
+    - "/usr/sbin/passenger-status"
