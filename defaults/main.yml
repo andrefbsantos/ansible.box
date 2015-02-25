@@ -11,6 +11,7 @@ box_group: rails
 box_webpath: /var/www
 
 box_essential:
+  - rsync
   - xtail
   - curl
   - build-essential
