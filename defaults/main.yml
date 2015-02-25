@@ -11,6 +11,7 @@ box_group: rails
 box_webpath: /var/www
 
 box_essential:
+  - xtail
   - curl
   - build-essential
   - git
@@ -21,7 +22,8 @@ box_nginx_home: /var/www/microservice
 
 box_packages: [ ]
 
-box_packages:
+# example:
+#box_packages:
 #     - ruby1.9.3
 #     - nodejs
 #     - redis

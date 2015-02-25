@@ -20,6 +20,6 @@
     uid: 1000
     group: "{{ box_group }}"
     home: "{{ box_webpath }}"
-    shell: /sbin/nologin
+    shell: /bin/bash
     state: present
 
