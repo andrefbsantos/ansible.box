@@ -1,0 +1,12 @@
+---
+
+- name: configure apt
+  copy:
+   src: "apt/{{ item }}"
+   dest: "/etc/apt/apt.conf.d/{{ item }}"
+   owner: root
+   group: root
+   mode: 0644
+  with_items:
+    - "99-defaults"
+    - "local"
