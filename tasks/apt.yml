@@ -10,3 +10,9 @@
   with_items:
     - "99-defaults"
     - "local"
+
+- name: setup debconf
+  shell: "{{ item }}"
+  with_items:
+    - "echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections"
+    - "echo 'debconf debconf/priority select critical' | debconf-set-selections"
