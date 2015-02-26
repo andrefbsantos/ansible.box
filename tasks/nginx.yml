@@ -54,4 +54,4 @@
   when: "'passenger' in box_packages"
 
 
-- { include: runit.yml, runit_scripts: [ "nginx", "nginx-log-forwarder" ], when: box_container }
+- { include: runit.yml, runit_scripts: [ "nginx" ], when: box_container }
