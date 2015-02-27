@@ -1,5 +1,5 @@
 user www-data;
-worker_processes 1;
+worker_processes 2;
 pid /run/nginx.pid;
 {% if box_container %}daemon off;{% else%}daemon on;{% endif %}
 

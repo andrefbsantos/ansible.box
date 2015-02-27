@@ -35,3 +35,9 @@
     group: root
     mode: 755
 
+- name: create TERM env
+  lineinfile:
+    create: yes
+    state: present
+    dest: /etc/container_environment/TERM
+    line: dumb
