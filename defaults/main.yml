@@ -16,6 +16,7 @@ box_essential:
   - curl
   - build-essential
   - git
+  - nano
 
 box_env: development
 
