@@ -33,7 +33,7 @@
     dest: /sbin/my_init
     owner: root
     group: root
-    mode: 755
+    mode: 0755
 
 - name: create TERM env
   lineinfile:

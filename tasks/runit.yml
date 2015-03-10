@@ -35,6 +35,6 @@
    dest: "/etc/service/{{ item }}/run"
    owner: root
    group: root
-   mode: 755
+   mode: 0755
   with_items: runit_scripts
 
