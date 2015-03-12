@@ -17,6 +17,8 @@ box_essential:
   - build-essential
   - git
   - nano
+  - postgresql-client
+  - mongodb-clients
 
 box_env: development
 
