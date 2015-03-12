@@ -6,8 +6,15 @@ server {
     passenger_enabled on;
     passenger_user {{ box_user }};
     passenger_app_env {{ box_env }};
-  {% if box_env == "development" %}
+{% if box_env == "development" %}
     passenger_friendly_error_pages on;
-  {% endif %}
+{% endif %}
+location ~* ^/(images|javascripts|stylesheets)/ {
+    expires 1y;
+    add_header Cache-Control public;
+    add_header Last-Modified "";
+    add_header ETag "";
+    break;
+}
 {% endif %}
 }
