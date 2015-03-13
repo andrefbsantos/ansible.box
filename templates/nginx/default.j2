@@ -9,7 +9,7 @@ server {
 {% if box_env == "development" %}
     passenger_friendly_error_pages on;
 {% endif %}
-location ~* ^/(images|javascripts|stylesheets)/ {
+location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
     expires 1y;
     add_header Cache-Control public;
     add_header Last-Modified "";
