@@ -37,3 +37,6 @@
   with_items:
     - "/usr/sbin/passenger-memory-stats"
     - "/usr/sbin/passenger-status"
+
+- name: Passenger | Compile native support
+  command: passenger-config build-native-support
