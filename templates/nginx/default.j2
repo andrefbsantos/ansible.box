@@ -5,9 +5,6 @@ server {
 {% if "passenger" in box_packages %}
     passenger_enabled on;
     passenger_user {{ box_user }};
-{% if box_env == "development" %}
-    passenger_friendly_error_pages on;
-{% endif %}
     location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
       expires 1y;
       add_header Cache-Control public;
