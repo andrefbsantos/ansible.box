@@ -1,5 +1,10 @@
 ---
 
+- name: Nginx | add oficial repository
+  apt_repository:
+    repo: 'ppa:nginx/stable'
+    update_cache: yes
+
 - name: Install nginx
   apt:
    pkg: "{{ item }}"
@@ -53,5 +58,15 @@
     mode: 0644
   when: "'passenger' in box_packages"
 
+- name: Nginx | link logs files
+  file:
+    src: "{{ item.0 }}"
+    dest: "{{ item.1 }}"
+    state: link
+    force: yes
+  with_items:
+    - [ "/dev/stdout/", "/var/log/nginx/access.log" ]
+    - [ "/dev/stderr", "/var/log/nginx/error.log" ]
+  when: box_container
 
 - { include: runit.yml, runit_scripts: [ "nginx" ], when: box_container }
