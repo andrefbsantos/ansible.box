@@ -35,6 +35,15 @@
     group: root
     mode: 0755
 
+- copy:
+    src: "init/{{ item }}"
+    dest: "/etc/my_init.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - "50_passenger_env.sh" 
+
 - name: create TERM env
   lineinfile:
     create: yes
