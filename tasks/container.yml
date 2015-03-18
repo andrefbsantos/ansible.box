@@ -6,7 +6,7 @@
     - initscripts
     - upstart
 
-- command: dpkg-divert --local --rename --add {{ item }}
+- command: dpkg-divert --local --rename --add {{ item }}
   with_items: box_container_replace
 
 - file:
@@ -20,7 +20,7 @@
 
 
 - file:
-    path: "{{ item }}"
+    path: "{{ item }}"
     owner: root
     group: root
     state: directory

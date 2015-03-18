@@ -16,7 +16,7 @@
 
 - name: Nginx directories
   file:
-    path: "{{ item }}"
+    path: "{{ item }}"
     owner: root
     group: root
     state: directory
@@ -65,7 +65,7 @@
     state: link
     force: yes
   with_items:
-    - [ "/dev/stdout", "/var/log/nginx/access.log" ]
+    - [ "/dev/stdout", "/var/log/nginx/access.log" ]
     - [ "/dev/stderr", "/var/log/nginx/error.log" ]
   when: box_container
 
