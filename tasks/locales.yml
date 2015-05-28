@@ -2,12 +2,14 @@
 
 - name: copy locales
   copy:
-   src: misc/locales
-   dest: /etc/default/locales
-   owner: root
-   group: root
-   mode: 0644
+    src: misc/locales
+    dest: /etc/default/locales
+    owner: root
+    group: root
+    mode: 0644
+  register: locales
 
 - name: reconfigure locales
   command: dpkg-reconfigure --frontend noninteractive locales
+  when: locales.changed
 

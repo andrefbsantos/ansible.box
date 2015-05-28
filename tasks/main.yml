@@ -1,6 +1,10 @@
 ---
   - include: apt.yml
 
+  - include: timezone.yml
+
+  - include: locales.yml
+
   - include: update.yml
     when: box_upgrade
 

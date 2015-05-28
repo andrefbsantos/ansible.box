@@ -1,0 +1,13 @@
+---
+
+- name: setup timezone
+  lineinfile:
+    create: yes
+    state: present
+    dest: /etc/timezone
+    line: "{{ box_timezone }}"
+  register: timezone
+
+- name: reconfigure timezone
+  command: dpkg-reconfigure --frontend noninteractive tzdata
+  when: timezone.changed

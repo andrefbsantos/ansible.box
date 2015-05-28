@@ -20,6 +20,8 @@ box_essential:
   - postgresql-client
   - mongodb-clients
 
+box_timezone: Etc/UTC
+
 box_env: development
 
 box_nginx_home: /var/www/microservice
