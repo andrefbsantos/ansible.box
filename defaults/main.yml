@@ -1,5 +1,7 @@
 ---
 
+box_locale: en_US.UTF-8
+
 box_container: true
 
 box_upgrade: true

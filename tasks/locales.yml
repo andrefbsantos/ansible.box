@@ -1,15 +1,15 @@
 ---
 
-- name: copy locale
-  copy:
-    src: misc/locale
+- name: Locale | Copy configuration
+  template:
+    src: locale/locale.j2
     dest: /etc/default/locale
     owner: root
     group: root
     mode: 0644
-  register: locale
+
+- name: Locale | generate locale
+  command: "locale-gen {{ box.locale }}"
 
 - name: reconfigure locales
   command: dpkg-reconfigure --frontend noninteractive locales
-  when: locale.changed
-

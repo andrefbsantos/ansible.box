@@ -42,11 +42,15 @@
     group: root
     mode: 0755
   with_items:
-    - "50_passenger_env.sh" 
+    - "50_passenger_env.sh"
 
-- name: create TERM env
+- name: create locales env
   lineinfile:
     create: yes
     state: present
-    dest: /etc/container_environment/TERM
-    line: dumb
+    dest: "/etc/container_environment/{{ item }}"
+    line: "{{ box.locale }}"
+  with_items:
+    - LANG
+    - LC_ALL
+    - LANGUAGE
