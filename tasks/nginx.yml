@@ -49,15 +49,6 @@
     group: root
     mode: 0644
 
-- name: Nginx passenger configuration
-  copy:
-    src: nginx/passenger.conf
-    dest: /etc/nginx/conf.d/passenger.conf
-    owner: root
-    group: root
-    mode: 0644
-  when: "'passenger' in box_packages"
-
 - name: Nginx | link logs files
   file:
     src: "{{ item.0 }}"
@@ -68,5 +59,3 @@
     - [ "/dev/stdout", "/var/log/nginx/access.log" ]
     - [ "/dev/stderr", "/var/log/nginx/error.log" ]
   when: box_container
-
-- { include: runit.yml, runit_scripts: [ "nginx" ], when: box_container }

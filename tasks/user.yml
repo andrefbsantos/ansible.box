@@ -3,7 +3,7 @@
 - name: User | create application group
   group:
     name: "{{ box_group }}"
-    gid: 1000
+    gid: "{{ box_group_id | default(1000) }}"
     state: present
 
 - name: User | ensure dir exits
@@ -11,13 +11,13 @@
     path: "{{ box_webpath | dirname }}"
     owner: root
     group: root
-    state: directory  
+    state: directory
 
 - name: User | create application user
   user:
     name: "{{ box_user }}"
     comment: "application user"
-    uid: 1000
+    uid: "{{ box_user_id | default(1000) }}"
     group: "{{ box_group }}"
     home: "{{ box_webpath }}"
     shell: /bin/bash

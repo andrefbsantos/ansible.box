@@ -40,3 +40,12 @@
 
 - name: Passenger | Compile native support
   command: passenger-config build-native-support
+
+- name: Nginx passenger configuration
+  copy:
+    src: nginx/passenger.conf
+    dest: /etc/nginx/conf.d/passenger.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: "'nginx' in box_packages"

@@ -8,19 +8,16 @@ box_upgrade: true
 
 box_github_https: true
 
-box_user: rails
-box_group: rails
+box_user: app
+box_group: app
+box_user_id: 1000
+box_group_id: 1000
 box_webpath: /var/www
 
 box_essential:
-  - rsync
-  - xtail
   - curl
   - build-essential
   - git
-  - nano
-  - postgresql-client
-  - mongodb-clients
 
 box_timezone: Etc/UTC
 

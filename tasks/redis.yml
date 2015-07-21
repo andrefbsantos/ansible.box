@@ -17,7 +17,3 @@
     owner: root
     group: root
     mode: 0644
-
-- include: runit.yml
-  runit_scripts: [ "redis" ]
-  when: box_container

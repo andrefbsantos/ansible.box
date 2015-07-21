@@ -1,0 +1,18 @@
+---
+
+- name: install docker container
+  hosts: all
+  sudo: yes
+
+  roles:
+    - role: ansible.box
+      box_container: true
+      box_upgrade: false
+      box_github_https: true
+      box_user: app
+      box_user_id: 1001
+      box_group_id: 1001
+      box_group: app
+      box_webpath: /var/www/service
+      box_packages:
+        - ruby2.2
