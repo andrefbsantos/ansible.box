@@ -41,7 +41,7 @@
 - name: Passenger | Compile native support
   command: passenger-config build-native-support
 
-- name: Nginx passenger configuration
+- name: Passenger | Nginx passenger configuration
   copy:
     src: nginx/passenger.conf
     dest: /etc/nginx/conf.d/passenger.conf

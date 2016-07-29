@@ -3,12 +3,12 @@
 - set_fact:
    ruby_version: "{{ box_ruby_supported | intersect(box_packages)|join('') }}"
 
-- name: add brightbox ruby repository
+- name: Ruby | add brightbox ruby repository
   apt_repository:
    repo: 'ppa:brightbox/ruby-ng'
    state: present
 
-- name: set gemrc
+- name: Ruby | set gemrc
   copy:
    src: misc/gemrc
    dest: /etc/gemrc
@@ -16,7 +16,7 @@
    group: root
    mode: 0644
 
-- name: install ruby and utils
+- name: Ruby | install ruby and utils
   apt:
    pkg: "{{ item }}"
    state: present
@@ -35,7 +35,7 @@
    - libcurl4-openssl-dev
    - zlib1g-dev
 
-- name: install bundler
+- name: Ruby | install bundler
   gem:
    name: "{{ item }}"
    state: present
