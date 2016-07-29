@@ -21,17 +21,17 @@
   - include: nodejs.yml
     when: "'nodejs' in box_packages"
 
-  - include: passenger.yml
-    when: "'passenger' in box_packages"
-
-  - include: memcached.yml
-    when: "'memcached' in box_packages"
-
   - include: redis.yml
     when: "'redis' in box_packages"
 
   - include: nginx.yml
     when: "'nginx' in box_packages"
+
+  - include: passenger.yml
+    when: "'passenger' in box_packages"
+
+  - include: memcached.yml
+    when: "'memcached' in box_packages"
 
   - include: container.yml
     when: box_container
