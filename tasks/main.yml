@@ -16,22 +16,22 @@
   - include: user.yml
 
   - include: ruby.yml
-    when: "{{ box_ruby_supported | intersect(box_packages)| length == 1 }}"
+    when: "{{ box_ruby_supported | intersect({{box_essential}})| length == 1 }}"
 
   - include: nodejs.yml
-    when: "'nodejs' in box_packages"
+    when: "'nodejs' in {{box_essential}}"
 
   - include: redis.yml
-    when: "'redis' in box_packages"
+    when: "'redis' in {{box_essential}}"
 
   - include: nginx.yml
-    when: "'nginx' in box_packages"
+    when: "'nginx' in {{box_essential}}"
 
   - include: passenger.yml
-    when: "'passenger' in box_packages"
+    when: "'passenger' in {{box_essential}}"
 
   - include: memcached.yml
-    when: "'memcached' in box_packages"
+    when: "'memcached' in {{box_essential}}"
 
   - include: container.yml
     when: box_container
